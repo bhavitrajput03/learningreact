@@ -25,14 +25,12 @@ function App() {
 
 const handleCheck = (id) => {
     const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
-    setItems(listItems);
-    localStorage.setItem('shoppinglist', JSON.stringify(listItems));
+    setAndSaveItems(listItems);
 }
 
 const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
-    localStorage.setItem('shoppinglist', JSON.stringify(listItems));
+    setAndSaveItems(listItems);
 }
 
 const handleSubmit = (e) => {
